@@ -1,19 +1,19 @@
 <!--<div class="header">-->
-  <!--<ul class="nav nav-pills pull-right">-->
-    <!--<li class="active"><a ng-href="#">Home</a></li>-->
-    <!--<li><a ng-href="#">About</a></li>-->
-    <!--<li><a ng-href="#">Contact</a></li>-->
-  <!--</ul>-->
-  <!--<h3 class="text-muted">WordCount FrontEnd</h3>-->
+<!--<ul class="nav nav-pills pull-right">-->
+<!--<li class="active"><a ng-href="#">Home</a></li>-->
+<!--<li><a ng-href="#">About</a></li>-->
+<!--<li><a ng-href="#">Contact</a></li>-->
+<!--</ul>-->
+<!--<h3 class="text-muted">WordCount FrontEnd</h3>-->
 <!--</div>-->
 
 <!--<div class="jumbotron">-->
-  <!--<h1>'Allo, 'Allo!</h1>-->
-  <!--<p class="lead">-->
-    <!--<img src="images/yeoman.png" alt="I'm Yeoman"><br>-->
-    <!--Always a pleasure scaffolding your apps.-->
-  <!--</p>-->
-  <!--<p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>-->
+<!--<h1>'Allo, 'Allo!</h1>-->
+<!--<p class="lead">-->
+<!--<img src="images/yeoman.png" alt="I'm Yeoman"><br>-->
+<!--Always a pleasure scaffolding your apps.-->
+<!--</p>-->
+<!--<p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>-->
 <!--</div>-->
 
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -26,7 +26,9 @@
 
 <div class="lead-container">
     <h1>Word Count</h1>
-    <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+
+    <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a
+        mostly barebones HTML document.</p>
 </div>
 
 <div class="col-md-12">
@@ -35,55 +37,83 @@
     </div>
 </div>
 <div class="row marketing">
-    <div class="col-md-12" ng-repeat="article in articles | filter:query">
+    <div class="col-md-12 article-item" ng-animate="'animate'" ng-repeat="article in articles | filter:query">
         <div class="row">
             <div class="col-md-2 news-provider-image-container">
                 <!-- Please Change -->
                 <div ng-switch on="article.hostname">
                     <div ng-switch-when="blogs.channel4.com">
-                        <img class="news-provider-image" src="/images/channel4News.png" width="80" height="45" />
+                        <div class="hostname">Channel 4</div>
+                        <!--<img class="news-provider-image" src="/images/channel4News.png" width="80" height="45"/>-->
                     </div>
                     <div ng-switch-when="www.channel4.com">
-                        <img class="news-provider-image" src="/images/channel4News.png" width="80" height="45" />
+                        <div class="hostname">Channel 4</div>
+                        <!--<img class="news-provider-image" src="/images/channel4News.png" width="80" height="45"/>-->
                     </div>
                     <div ng-switch-when="news.sky.com">
-                        <img class="news-provider-image" src="/images/skyNews.jpeg" width="125" height="38" />
+                        <div class="hostname">Sky</div>
+                        <!--<img class="news-provider-image" src="/images/skyNews.jpeg" width="125" height="38"/>-->
                     </div>
                     <div ng-switch-when="www.itv.com">
-                        <img class="news-provider-image" src="/images/itvNews.jpeg" width="80" height="45" />
+                        <div class="hostname">ITV</div>
+                        <!--<img class="news-provider-image" src="/images/itvNews.jpeg" width="80" height="45"/>-->
                     </div>
                     <div ng-switch-when="www.bbc.co.uk">
-                        <img class="news-provider-image" src="/images/bbcNews.jpeg" width="80" height="45" />
+                        <div class="hostname">BBC</div>
+                        <!--<img class="news-provider-image" src="/images/bbcNews.jpeg" width="80" height="45"/>-->
                     </div>
                     <div ng-switch-default>
-                        <img class="news-provider-image" src="/images/fdfd.jpeg" width="80" height="45" />
+                        <div class="hostname">Unknown</div>
+                        <!--<img class="news-provider-image" src="/images/fdfd.jpeg" width="80" height="45"/>-->
                     </div>
                 </div>
 
             </div>
             <div class="col-md-10">
                 <!-- Article Title -->
-                <h3 class="article-title">{{article.title}}</h3>
-                <p>URL : <a href={{article.url}}>{{article.url}}</a></p>
-                <!-- Article Word Count etc, important numbers for each article -->
-                <div class="analytics-items-container">
-                    <div class="analytics-item">
-                        <div>Article Words</div>
-                        <div class="number-container">
-                            <div class="number">{{article.articleWordCount}}</div>
+                <div class="article-title-container">
+                    <h3 class="article-title">{{article.title}}</h3>
+                </div>
+                <div class="url-container">
+                    <div class="col-md-12 url-container-row">
+                        <div class="row">
+                            <div class="col-md-2 source">
+                                Source
+                            </div>
+                            <div class="col-md-10 url">
+                                <a href={{article.url}}>{{article.url}}</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="analytics-item">
-                        <div>Articles Videos</div>
-                        <div class="number-container">
-                            <div class="number">{{article.richMediaItems}}</div>
+                </div>
+                <!-- Article Word Count etc, important numbers for each article -->
+                <div class="analytics-items-container">
+                    <div class="item-title">Article Statistics
+                    </div>
+                    <div class="item-content">
+                        <div class="analytics-item">
+                            <div class="description">Words</div>
+                            <div class="number-container">
+                                <div class="number">{{article.articleWordCount}}</div>
+                            </div>
+                        </div>
+                        <div class="analytics-item">
+                            <div class="description">Videos</div>
+                            <div class="number-container">
+                                <div class="number">{{article.richMediaItems}}</div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!-- Keyword Occurrence -->
                 <div class="article-keywords">
-                    Keyword Occurrence : <span ng-repeat="keyword in article.keywordOccurrence">{{keyword.word}}
+                    <div class="item-title">
+                        Keyword Occurrence
+                    </div>
+                    <div class="item-content">
+                        <span ng-repeat="keyword in article.keywordOccurrence">{{keyword.word}}
                         &#40{{keyword.occurrence}}&#41{{$last ? '' : ', '}}</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -91,5 +121,5 @@
 </div>
 
 <div class="footer">
-  <p><span class="glyphicon glyphicon-heart"></span> from the RND team</p>
+    <p><span class="glyphicon glyphicon-heart"></span> from the RND team</p>
 </div>
