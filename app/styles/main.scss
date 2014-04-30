@@ -1,5 +1,10 @@
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+
+// bower:scss
+@import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+// endbower
 
 //$grey-one-color: #535353;
 $grey-one-color: #efefef;
@@ -22,11 +27,6 @@ h3{
   font-weight: 100;
 }
 
-@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
-
-// bower:scss
-@import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
-// endbower
 
 a{
   color: #aaaaaa;
@@ -123,17 +123,16 @@ body {
 }
 
 .lead-container{
-//  border:1px solid green;
+  //border:1px solid green;
   margin-top: 80px;
   text-align: center;
   margin-bottom:50px;
   font-family: 'Roboto Slab', 'serif';
-
 }
 
 .search-input{
+  //border:1px solid red;
   margin-bottom: 20px;
-//  border:1px solid red;
   font-family: 'Roboto Slab', 'serif';
   font-weight:100;
   text-align:center;
@@ -156,12 +155,10 @@ body {
 
 .analytics-items-container{
 //  border:1px solid green;
-//  height:150px;
   margin-bottom: 20px;
-//  background-color: $background-white-color;
 
   .item-content{
-//    border:1px solid yellow;
+    //border:1px solid yellow;
     background-color: $background-white-color;
     padding: 15px 15px 15px 20px;
     min-height:107px;
@@ -169,13 +166,13 @@ body {
 }
 
 .item-title{
-//  border:1px solid yellowgreen;
+  //border:1px solid yellowgreen;
+  @include headingText();
+  font-size:1.4em;
   padding: 10px;
   background-color: $grey-one-color;
   color:$text-color-light;
   padding:8px 8px 8px 20px;
-  @include headingText();
-  font-size:1.4em;
 }
 
 .analytics-item{
@@ -195,8 +192,8 @@ body {
   }
 
   .number-container{
+    //border:1px solid red;
     float:left;
-//    border:1px solid red;
     margin: auto;
     border:5px solid #efefef;
     display: table;
@@ -213,14 +210,13 @@ body {
       display: table-cell;
       vertical-align: middle;
       font-size:1.4em;
-
     }
   }
 }
 
 .article-keywords{
   .item-content{
-//    border:1px solid yellow;
+    //border:1px solid yellow;
     background-color: $background-white-color;
     padding: 15px 15px 15px 20px;
     color:$normal-text-color;
@@ -228,63 +224,51 @@ body {
 }
 
 .news-provider-image-container{
-
-//  text-align: center;
-//  padding:20px;
-//  border:1px solid red;
-//  height:69px;
+  //border:1px solid red;
   background-color: $background-white-color;
   display: table;
-//  height:100px;
 
   .news-provider-image{
-//    border:1px solid blue;
+    //border:1px solid blue;
     vertical-align: middle;
     display: table-cell;
     margin: auto;
     text-align: center;
   }
-
 }
 
 .article-item{
-//  border:1px solid red;
+  // border:1px solid red;
   background-color: #f9f9f9;
   padding:15px;
   margin-bottom: 15px;
 
   .article-title-container{
-
-//    border:1px solid blue;
     background-color: #72ac93;
     color: #efefef;
     padding: 20px;
     margin-bottom:14px;
-//    border-bottom-left-radius: 15px;
 
     .article-title{
+      @include headingText();
       margin-top: 0px;
       margin-bottom: 0px;
-      @include headingText();
       font-size: 2em;
     }
   }
 
   .url-container{
-
     margin-bottom: 20px;
     min-height: 35px;
 
     .url-container-row {
-
       padding-left: 0px;
       padding-right: 0px;
 
       .source {
-        //      border:1px solid red;
+        @include headingText();
         padding: 8px 8px 8px 20px;
         background-color: $grey-one-color;
-        @include headingText();
         color: $text-color-light;
         font-size: 1.4em;
       }
@@ -307,4 +291,8 @@ body {
   padding: 10px;
   font-size: 1.5em;
   @include headingText();
+}
+
+.article-item-description{
+  border:1px solid red;
 }

@@ -40,31 +40,24 @@
     <div class="col-md-12 article-item" ng-animate="'animate'" ng-repeat="article in articles | filter:query">
         <div class="row">
             <div class="col-md-2 news-provider-image-container">
-                <!-- Please Change -->
                 <div ng-switch on="article.hostname">
                     <div ng-switch-when="blogs.channel4.com">
                         <div class="hostname">Channel 4</div>
-                        <!--<img class="news-provider-image" src="/images/channel4News.png" width="80" height="45"/>-->
                     </div>
                     <div ng-switch-when="www.channel4.com">
                         <div class="hostname">Channel 4</div>
-                        <!--<img class="news-provider-image" src="/images/channel4News.png" width="80" height="45"/>-->
                     </div>
                     <div ng-switch-when="news.sky.com">
                         <div class="hostname">Sky</div>
-                        <!--<img class="news-provider-image" src="/images/skyNews.jpeg" width="125" height="38"/>-->
                     </div>
                     <div ng-switch-when="www.itv.com">
                         <div class="hostname">ITV</div>
-                        <!--<img class="news-provider-image" src="/images/itvNews.jpeg" width="80" height="45"/>-->
                     </div>
                     <div ng-switch-when="www.bbc.co.uk">
                         <div class="hostname">BBC</div>
-                        <!--<img class="news-provider-image" src="/images/bbcNews.jpeg" width="80" height="45"/>-->
                     </div>
                     <div ng-switch-default>
                         <div class="hostname">Unknown</div>
-                        <!--<img class="news-provider-image" src="/images/fdfd.jpeg" width="80" height="45"/>-->
                     </div>
                 </div>
 
@@ -74,47 +67,53 @@
                 <div class="article-title-container">
                     <h3 class="article-title">{{article.title}}</h3>
                 </div>
-                <div class="url-container">
-                    <div class="col-md-12 url-container-row">
-                        <div class="row">
-                            <div class="col-md-2 source">
-                                Source
-                            </div>
-                            <div class="col-md-10 url">
-                                <a href={{article.url}}>{{article.url}}</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Article Word Count etc, important numbers for each article -->
-                <div class="analytics-items-container">
-                    <div class="item-title">Article Statistics
-                    </div>
-                    <div class="item-content">
-                        <div class="analytics-item">
-                            <div class="description">Words</div>
-                            <div class="number-container">
-                                <div class="number">{{article.articleWordCount}}</div>
-                            </div>
-                        </div>
-                        <div class="analytics-item">
-                            <div class="description">Videos</div>
-                            <div class="number-container">
-                                <div class="number">{{article.richMediaItems}}</div>
+
+
+                <div class="article-item-description">
+                    <div class="url-container">
+                        <div class="col-md-12 url-container-row">
+                            <div class="row">
+                                <div class="col-md-2 source">
+                                    Source
+                                </div>
+                                <div class="col-md-10 url">
+                                    <a href={{article.url}}>{{article.url}}</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- Keyword Occurrence -->
-                <div class="article-keywords">
-                    <div class="item-title">
-                        Keyword Occurrence
+                    <!-- Article Word Count etc, important numbers for each article -->
+                    <div class="analytics-items-container">
+                        <div class="item-title">Article Statistics
+                        </div>
+                        <div class="item-content">
+                            <div class="analytics-item">
+                                <div class="description">Words</div>
+                                <div class="number-container">
+                                    <div class="number">{{article.articleWordCount}}</div>
+                                </div>
+                            </div>
+                            <div class="analytics-item">
+                                <div class="description">Videos</div>
+                                <div class="number-container">
+                                    <div class="number">{{article.richMediaItems}}</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="item-content">
-                        <span ng-repeat="keyword in article.keywordOccurrence">{{keyword.word}}
-                        &#40{{keyword.occurrence}}&#41{{$last ? '' : ', '}}</span>
+                    <!-- Keyword Occurrence -->
+                    <div class="article-keywords">
+                        <div class="item-title">
+                            Keyword Occurrence
+                        </div>
+                        <div class="item-content">
+                            <span ng-repeat="keyword in article.keywordOccurrence">{{keyword.word}}
+                            &#40{{keyword.occurrence}}&#41{{$last ? '' : ', '}}</span>
+                        </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
     </div>
