@@ -1,26 +1,23 @@
-<!--<div class="header">-->
-<!--<ul class="nav nav-pills pull-right">-->
-<!--<li class="active"><a ng-href="#">Home</a></li>-->
-<!--<li><a ng-href="#">About</a></li>-->
-<!--<li><a ng-href="#">Contact</a></li>-->
-<!--</ul>-->
-<!--<h3 class="text-muted">WordCount FrontEnd</h3>-->
-<!--</div>-->
-
-<!--<div class="jumbotron">-->
-<!--<h1>'Allo, 'Allo!</h1>-->
-<!--<p class="lead">-->
-<!--<img src="images/yeoman.png" alt="I'm Yeoman"><br>-->
-<!--Always a pleasure scaffolding your apps.-->
-<!--</p>-->
-<!--<p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>-->
-<!--</div>-->
-
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Word Count</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Article Word Count</a>
         </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <input ng-model="query" type="text" class="form-control" placeholder="filter by ie. keywords, channels">
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" ng-click="isExpanded = !isExpanded">Expand / Contract</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
     </div>
 </div>
 
@@ -32,9 +29,11 @@
 </div>
 
 <div class="col-md-12">
-    <div class="input-group input-group-lg search-input">
-        <input ng-model="query" type="text" class="form-control" placeholder="Search ie. keywords, channels">
-    </div>
+    <!--<div class="input-group input-group-lg search-input">-->
+        <!--<input ng-model="query" type="text" class="form-control" placeholder="Search ie. keywords, channels">-->
+
+    <!--</div>-->
+    <!--<button ng-click="isExpanded = !isExpanded">Expand</button>-->
 </div>
 <div class="row marketing">
     <div class="col-md-12 article-item" ng-animate="'animate'" ng-repeat="article in articles | filter:query">
@@ -67,9 +66,7 @@
                 <div class="article-title-container">
                     <h3 class="article-title">{{article.title}}</h3>
                 </div>
-
-
-                <div class="article-item-description">
+                <div ng-show="isExpanded" class="article-item-description">
                     <div class="url-container">
                         <div class="col-md-12 url-container-row">
                             <div class="row">
