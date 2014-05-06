@@ -12,7 +12,7 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <input ng-model="query" type="text" class="form-control" placeholder="filter by ie. keywords, channels">
+                <input ng-model="query" type="text" class="form-control" placeholder="filter by ie. keyword, channels">
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#" ng-click="isExpanded = !isExpanded">Expand / Contract</a></li>
@@ -21,12 +21,44 @@
     </div>
 </div>
 
-<div class="lead-container">
-    <h1>Word Count</h1>
+<div class="row lead-container">
+    <div class="col-md-6 description">
+        <p>Article Word Count finds the latest articles from the BBC, ITV, Channel 4 and Sky News feeds,
+            runs through these articles, and gives you back various data about an article, examples being - the number
+            of words in the article and how 'rich' an article is.</p>
+        <p>Your able to type a search word in the box above, which will give you all articles
+            from the feeds that contain this search word, ie. If you type 'ITV', you will get all ITV articles,
+            if you type 'Ukraine' you get all articles that contain the word Ukraine.</p>
+        <p>Use Expand / Contract button to expand the data.</p>
+    </div>
 
-    <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a
-        mostly barebones HTML document.</p>
+    <div class="col-md-6 analytics-data">
+        <div class="item">Search Date</div><div class="value">{{searchDate | date:'medium'}}</div>
+        <div class="spacer"></div>
+
+        <div class="item">Feeds Used</div><div class="value">http://feeds.bbci.co.uk/news/rss.xml,
+        http://www.channel4.com/news/world-news/rss,
+        http://news.sky.com/feeds/rss/home.xml,
+        http://www.itv.com/news/index.rss</div>
+
+        <!--<div class="item">Feeds Used</div><div class="value">{{rssFeeds}}</div>-->
+
+        <div class="spacer"></div>
+        <div class="item">Articles requested</div><div class="value">{{articlesRequested}}</div>
+    </div>
+
+
 </div>
+
+
+
+
+<!--<div class="lead-container">-->
+    <!--<h1>Word Count</h1>-->
+
+    <!--<p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a-->
+        <!--mostly barebones HTML document.</p>-->
+<!--</div>-->
 
 <div class="col-md-12">
     <!--<div class="input-group input-group-lg search-input">-->
