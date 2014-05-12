@@ -7,16 +7,19 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 // endbower
 
 //$grey-one-color: #535353;
-$grey-one-color: #efefef;
+
 $heading-text-color: #1b1b1b;
 //$heading-text-color: #efefef;
 $background-white-color: #ffffff;
 $primary-color: #72AC93;
 $normal-text-color: #666666;
 $text-color: #343434;
+
+$grey-one-color: #efefef;
 $text-color-light: #343434;
 
 $item-background-color:#f9f9f9;
+$background-grey-color:#343434;
 
 //color scheme
 $color-scheme-two:#98002f;
@@ -223,13 +226,14 @@ body {
     //border:1px solid yellow;
     background-color: $background-white-color;
     padding: 15px 15px 15px 20px;
-    color: $normal-text-color;
+    color: #a1a1a1;
   }
 }
 
 .news-provider-image-container {
   //border:1px solid red;
-  background-color: $background-white-color;
+  background-color: $background-grey-color;//$background-white-color;
+  color: #efefef;
   display: table;
 
   .news-provider-image {
@@ -244,8 +248,8 @@ body {
 .article-item {
   // border:1px solid red;
   background-color: $item-background-color;
-  padding: 15px;
-  margin-bottom: 15px;
+  padding: 0px;
+  margin-bottom: 9px;
 
   .article-title-container {
     background-color: #72ac93;
@@ -294,7 +298,7 @@ body {
 }
 
 .hostname {
-  padding: 10px;
+  padding: 10px 10px 11px 10px;
   font-size: 1.5em;
   @include headingText();
 }
@@ -313,7 +317,8 @@ body {
 }
 
 .lead-container {
-  background-color: $item-background-color;
+  background-color: #343434;
+
 //  border: 1px solid red;
   text-align: left;
   padding: 15px;
@@ -336,7 +341,6 @@ body {
     color: #efefef;
     font-weight: 100;
     font-size:1.4em;
-    color: #666666;
     padding: 20px 25px 0px 11px;
   }
 
