@@ -67,6 +67,8 @@
     <!--</div>-->
     <!--<button ng-click="isExpanded = !isExpanded">Expand</button>-->
 </div>
+<div cg-busy="{promise:myPromise,message:'Looking at articles...'}"></div>
+
 <div class="row marketing">
     <div class="col-md-12 article-item" ng-animate="'animate'" ng-repeat="article in articles | filter:query">
         <div class="row">
